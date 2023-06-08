@@ -2,7 +2,7 @@
 # Challenge 13 E-Commerce Back End for ORM [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Project Description
-Easy to use back-end for updating, creating, retrieving, and deleting from a database for e-commerce stuff.
+Easy to use back-end for updating, creating, retrieving, and deleting from a database for e-commerce stuff. Link to video: https://drive.google.com/file/d/1N6rwcCNQAb9V36mRzPMc4ySMy19C9fmg/view
 
 ## Table of Contents
  - [Installation](#installation)
