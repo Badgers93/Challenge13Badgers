@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
   try {
     const tagsById = await Category.findByPk(tagId, { include: [{model: Product}]});
     if (tagId){
-      res.json(tagId);
+      res.json(tagsById);
     }
     else {
       res.status(404).json({ message: 'Tag not found' });
@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
   const tagName = req.body.tag_name;
   try {
     const createTag = await Tag.create({tagName});
-    res.status(200).json(tagName);
+    res.status(200).json(createTag);
   } catch (err){
     console.error(err);
     res.status(500).json(err);

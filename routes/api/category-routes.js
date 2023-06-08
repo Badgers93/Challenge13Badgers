@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
   try {
     const categoriesById = await Category.findByPk(categoryId, { include: [{model: Product}]});
     if (categoryId){
-      res.json(categoryId);
+      res.json(categoriesById);
     }
     else {
       res.status(404).json({ message: 'Category not found' });
@@ -35,8 +35,8 @@ router.post('/', async (req, res) => {
   // create a new category
   const categoryName = req.body.category_name;
   try {
-    const createCategory = await Category.create({categoryName});
-    res.status(200).json(categoryName);
+    const createCategory = await Category.create({category_name: categoryName});
+    res.status(200).json(createCategory);
   } catch (err){
     console.error(err);
     res.status(500).json(err);
@@ -50,7 +50,7 @@ router.put('/:id', async (req, res) => {
   try {
     const updateCategory = await Category.findByPk(categoryId);
     if (updateCategory){
-      await updateCategory.update({categoryName});
+      await updateCategory.update({category_name: categoryName});
       res.status(200).json(updateCategory);
     }
     else {
